@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/llonchj/knockttp"
+	"github.com/ervitis/knockttp"
 )
 
 func TestTransport(t *testing.T) {
