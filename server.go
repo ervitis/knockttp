@@ -51,7 +51,7 @@ func (ts *TestServer) ServeFunc(route *Route) func(w http.ResponseWriter, r *htt
 	return func(w http.ResponseWriter, r *http.Request) {
 		m, ok := route.GetHandler(r.Method)
 		if !ok {
-			w.WriteHeader(http.StatusInternalServerError)
+			w.WriteHeader(http.StatusMethodNotAllowed)
 			w.Header().Set("Content-Type", "text/plain")
 			w.Write([]byte(fmt.Sprintf("unsupported method: '%s'", r.Method)))
 			return
